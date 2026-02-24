@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>يوم التأسيس السعودي - 1727م</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #f4eee0, #e0d5ba);
+            margin: 0;
+            padding: 10px;
+            color: #4a3728;
+        }
+        .container {
+            max-width: 500px;
+            margin: 10px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid #c5a367;
+        }
+        h1 {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a3728;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        input[type="text"] {
+            width: 85%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #c5a367;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 16px;
+            background-color: #fffaf0;
+        }
+        button {
+            width: 90%;
+            padding: 15px;
+            background-color: #4a3728;
+            color: #f4eee0;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #634a36;
+        }
+        .card {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #e0d5ba;
+            border-radius: 20px;
+            background-color: #fffcf5;
+            display: none;
+        }
+        .output-text {
+            color: #c5a367;
+            font-size: 22px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .video-container video {
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid #c5a367;
+        }
+        .download-button {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 30px;
+            background-color: #c5a367;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        /* تنسيق الأسماء في الأسفل لمنع التداخل */
+        .footer-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e0d5ba;
+            text-align: center;
+        }
+        .footer-info p {
+            margin: 10px 0; /* مسافة كافية بين السطرين */
+            font-size: 15px;
+            font-weight: bold;
+            color: #4a3728;
+            display: block; /* كل اسم في سطر مستقل */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>"يوم التأسيس.. ثلاثة قرون من العز والفخر"</h1>
+        
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" placeholder="أدخل اسمك الثلاثي">
+        
+        <label for="school">المدرسة:</label>
+        <input type="text" id="school" placeholder="أدخل اسم المدرسة">
+        
+        <button onclick="generateCard()">استخراج بطاقة التأسيس</button>
+        
+        <div id="output" class="card">
+            <p>بفخر واعتزاز، شارك الطالب:</p>
+            <p id="output-name" class="output-text"></p>
+            <p>من منسوبي: <span id="output-school" style="color:#4a3728"></span></p>
+            
+            <img src="founding-day.jpg" alt="بطاقة يوم التأسيس">
+            
+            <div class="video-container">
+                <video controls>
+                    <source src="founding-video.mp4" type="video/mp4">
+                    متصفحك لا يدعم عرض الفيديو.
+                </video>
+            </div>
+
+            <a href="founding-day.jpg" class="download-button" download>تحميل البطاقة</a>
+            
+            <div class="footer-info">
+                <p>تصميم الطالب : نايف صلاح الفالح</p>
+                <p>رائد النشاط : إبراهيم حمدان المفرح</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateCard() {
+            const name = document.getElementById('name').value.trim();
+            const school = document.getElementById('school').value.trim();
+            
+            if (name === "" || school === "") {
+                alert("لطفاً، أكمل البيانات (الاسم والمدرسة) أولاً");
+                return;
+            }
+
+            document.getElementById('output-name').innerText = name;
+            document.getElementById('output-school').innerText = school;
+            document.getElementById('output').style.display = 'block';
+            
+            // تمرير تلقائي لرؤية النتيجة
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
