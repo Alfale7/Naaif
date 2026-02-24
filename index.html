@@ -11,6 +11,36 @@
 
 
     <style>
+
+
+
+    /* التعديلات المطلوبة لضبط شكل النافذة */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4eee0; /* لون ثابت بدلاً من التكرار */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* لتبدأ من الأعلى */
+        min-height: 100vh;
+    }
+    .container {
+        width: 95%; /* تأخذ معظم عرض الشاشة في الجوال */
+        max-width: 550px; /* لا تزيد عن هذا الحد في الكمبيوتر */
+        margin: 20px auto;
+        padding: 25px;
+        background: #ffffff;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border: 2px solid #c5a367;
+        box-sizing: border-box; /* لضمان الحساب الصحيح للمساحات */
+    }
+    /* لبقية التنسيقات حافظ على الكود القديم لديك */
+
+
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to bottom, #f4eee0, #e0d5ba);
